@@ -23,7 +23,7 @@ $ npm install -g dcfe
 $ dcfe COMMAND
 running command...
 $ dcfe (--version)
-dcfe/1.0.0 win32-x64 node-v16.15.1
+dcfe/2.0.0 win32-x64 node-v16.15.1
 $ dcfe --help [COMMAND]
 USAGE
   $ dcfe COMMAND
@@ -79,7 +79,7 @@ EXAMPLES
   hello friend from oclif! (./src/commands/hello/index.ts)
 ```
 
-_See code: [dist/commands/hello/index.ts](https://github.com/Ethan-Hill/DCFE/blob/v1.0.0/dist/commands/hello/index.ts)_
+_See code: [dist/commands/hello/index.ts](https://github.com/Ethan-Hill/DCFE/blob/v2.0.0/dist/commands/hello/index.ts)_
 
 ## `dcfe hello world`
 
