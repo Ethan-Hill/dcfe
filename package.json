@@ -1,6 +1,6 @@
 {
   "name": "dcfe",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "CLI tool for generating Drummond Central Frontend Structures",
   "author": "Ethan Hill",
   "bin": {

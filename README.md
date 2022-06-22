@@ -26,7 +26,7 @@ $ npm install -g dcfe
 $ dcfe COMMAND
 running command...
 $ dcfe (--version)
-dcfe/2.0.1 win32-x64 node-v16.15.1
+dcfe/2.0.2 win32-x64 node-v16.15.1
 $ dcfe --help [COMMAND]
 USAGE
   $ dcfe COMMAND
@@ -328,7 +328,7 @@ USAGE
   $ dcfe sass [FIRSTARG]
 ```
 
-_See code: [dist/commands/sass/index.ts](https://github.com/Ethan-Hill/DCFE/blob/v2.0.1/dist/commands/sass/index.ts)_
+_See code: [dist/commands/sass/index.ts](https://github.com/Ethan-Hill/DCFE/blob/v2.0.2/dist/commands/sass/index.ts)_
 <!-- commandsstop -->
 * [`dcfe hello PERSON`](#dcfe-hello-person)
 * [`dcfe hello world`](#dcfe-hello-world)
