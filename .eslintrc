@@ -1,0 +1,10 @@
+{
+   "extends": ["oclif", "oclif-typescript"],
+   "rules": {
+      "@typescript-eslint/explicit-module-boundary-types": "off",
+      "unicorn/no-array-reduce": "off",
+      "unicorn/no-for-loop": "off",
+      "unicorn/prefer-module": "off",
+      "indent": "off"
+   }
+}
