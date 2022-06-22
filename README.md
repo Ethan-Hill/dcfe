@@ -16,8 +16,23 @@ oclif example Hello World CLI
 * [Usage](#usage)
 * [Commands](#commands)
 <!-- tocstop -->
+* [Usage](#usage)
+* [Commands](#commands)
+<!-- tocstop -->
 # Usage
 <!-- usage -->
+```sh-session
+$ npm install -g dcfe
+$ dcfe COMMAND
+running command...
+$ dcfe (--version)
+dcfe/2.0.1 win32-x64 node-v16.15.1
+$ dcfe --help [COMMAND]
+USAGE
+  $ dcfe COMMAND
+...
+```
+<!-- usagestop -->
 ```sh-session
 $ npm install -g dcfe
 $ dcfe COMMAND
@@ -44,6 +59,277 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
+* [`dcfe help [COMMAND]`](#dcfe-help-command)
+* [`dcfe plugins`](#dcfe-plugins)
+* [`dcfe plugins:install PLUGIN...`](#dcfe-pluginsinstall-plugin)
+* [`dcfe plugins:inspect PLUGIN...`](#dcfe-pluginsinspect-plugin)
+* [`dcfe plugins:install PLUGIN...`](#dcfe-pluginsinstall-plugin-1)
+* [`dcfe plugins:link PLUGIN`](#dcfe-pluginslink-plugin)
+* [`dcfe plugins:uninstall PLUGIN...`](#dcfe-pluginsuninstall-plugin)
+* [`dcfe plugins:uninstall PLUGIN...`](#dcfe-pluginsuninstall-plugin-1)
+* [`dcfe plugins:uninstall PLUGIN...`](#dcfe-pluginsuninstall-plugin-2)
+* [`dcfe plugins update`](#dcfe-plugins-update)
+* [`dcfe sass [FIRSTARG]`](#dcfe-sass-firstarg)
+
+## `dcfe help [COMMAND]`
+
+Display help for dcfe.
+
+```
+USAGE
+  $ dcfe help [COMMAND] [-n]
+
+ARGUMENTS
+  COMMAND  Command to show help for.
+
+FLAGS
+  -n, --nested-commands  Include all nested commands in the output.
+
+DESCRIPTION
+  Display help for dcfe.
+```
+
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.1.12/src/commands/help.ts)_
+
+## `dcfe plugins`
+
+List installed plugins.
+
+```
+USAGE
+  $ dcfe plugins [--core]
+
+FLAGS
+  --core  Show core plugins.
+
+DESCRIPTION
+  List installed plugins.
+
+EXAMPLES
+  $ dcfe plugins
+```
+
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v2.0.11/src/commands/plugins/index.ts)_
+
+## `dcfe plugins:install PLUGIN...`
+
+Installs a plugin into the CLI.
+
+```
+USAGE
+  $ dcfe plugins:install PLUGIN...
+
+ARGUMENTS
+  PLUGIN  Plugin to install.
+
+FLAGS
+  -f, --force    Run yarn install with force flag.
+  -h, --help     Show CLI help.
+  -v, --verbose
+
+DESCRIPTION
+  Installs a plugin into the CLI.
+
+  Can be installed from npm or a git url.
+
+  Installation of a user-installed plugin will override a core plugin.
+
+  e.g. If you have a core plugin that has a 'hello' command, installing a user-installed plugin with a 'hello' command
+  will override the core plugin implementation. This is useful if a user needs to update core plugin functionality in
+  the CLI without the need to patch and update the whole CLI.
+
+ALIASES
+  $ dcfe plugins add
+
+EXAMPLES
+  $ dcfe plugins:install myplugin 
+
+  $ dcfe plugins:install https://github.com/someuser/someplugin
+
+  $ dcfe plugins:install someuser/someplugin
+```
+
+## `dcfe plugins:inspect PLUGIN...`
+
+Displays installation properties of a plugin.
+
+```
+USAGE
+  $ dcfe plugins:inspect PLUGIN...
+
+ARGUMENTS
+  PLUGIN  [default: .] Plugin to inspect.
+
+FLAGS
+  -h, --help     Show CLI help.
+  -v, --verbose
+
+DESCRIPTION
+  Displays installation properties of a plugin.
+
+EXAMPLES
+  $ dcfe plugins:inspect myplugin
+```
+
+## `dcfe plugins:install PLUGIN...`
+
+Installs a plugin into the CLI.
+
+```
+USAGE
+  $ dcfe plugins:install PLUGIN...
+
+ARGUMENTS
+  PLUGIN  Plugin to install.
+
+FLAGS
+  -f, --force    Run yarn install with force flag.
+  -h, --help     Show CLI help.
+  -v, --verbose
+
+DESCRIPTION
+  Installs a plugin into the CLI.
+
+  Can be installed from npm or a git url.
+
+  Installation of a user-installed plugin will override a core plugin.
+
+  e.g. If you have a core plugin that has a 'hello' command, installing a user-installed plugin with a 'hello' command
+  will override the core plugin implementation. This is useful if a user needs to update core plugin functionality in
+  the CLI without the need to patch and update the whole CLI.
+
+ALIASES
+  $ dcfe plugins add
+
+EXAMPLES
+  $ dcfe plugins:install myplugin 
+
+  $ dcfe plugins:install https://github.com/someuser/someplugin
+
+  $ dcfe plugins:install someuser/someplugin
+```
+
+## `dcfe plugins:link PLUGIN`
+
+Links a plugin into the CLI for development.
+
+```
+USAGE
+  $ dcfe plugins:link PLUGIN
+
+ARGUMENTS
+  PATH  [default: .] path to plugin
+
+FLAGS
+  -h, --help     Show CLI help.
+  -v, --verbose
+
+DESCRIPTION
+  Links a plugin into the CLI for development.
+
+  Installation of a linked plugin will override a user-installed or core plugin.
+
+  e.g. If you have a user-installed or core plugin that has a 'hello' command, installing a linked plugin with a 'hello'
+  command will override the user-installed or core plugin implementation. This is useful for development work.
+
+EXAMPLES
+  $ dcfe plugins:link myplugin
+```
+
+## `dcfe plugins:uninstall PLUGIN...`
+
+Removes a plugin from the CLI.
+
+```
+USAGE
+  $ dcfe plugins:uninstall PLUGIN...
+
+ARGUMENTS
+  PLUGIN  plugin to uninstall
+
+FLAGS
+  -h, --help     Show CLI help.
+  -v, --verbose
+
+DESCRIPTION
+  Removes a plugin from the CLI.
+
+ALIASES
+  $ dcfe plugins unlink
+  $ dcfe plugins remove
+```
+
+## `dcfe plugins:uninstall PLUGIN...`
+
+Removes a plugin from the CLI.
+
+```
+USAGE
+  $ dcfe plugins:uninstall PLUGIN...
+
+ARGUMENTS
+  PLUGIN  plugin to uninstall
+
+FLAGS
+  -h, --help     Show CLI help.
+  -v, --verbose
+
+DESCRIPTION
+  Removes a plugin from the CLI.
+
+ALIASES
+  $ dcfe plugins unlink
+  $ dcfe plugins remove
+```
+
+## `dcfe plugins:uninstall PLUGIN...`
+
+Removes a plugin from the CLI.
+
+```
+USAGE
+  $ dcfe plugins:uninstall PLUGIN...
+
+ARGUMENTS
+  PLUGIN  plugin to uninstall
+
+FLAGS
+  -h, --help     Show CLI help.
+  -v, --verbose
+
+DESCRIPTION
+  Removes a plugin from the CLI.
+
+ALIASES
+  $ dcfe plugins unlink
+  $ dcfe plugins remove
+```
+
+## `dcfe plugins update`
+
+Update installed plugins.
+
+```
+USAGE
+  $ dcfe plugins update [-h] [-v]
+
+FLAGS
+  -h, --help     Show CLI help.
+  -v, --verbose
+
+DESCRIPTION
+  Update installed plugins.
+```
+
+## `dcfe sass [FIRSTARG]`
+
+```
+USAGE
+  $ dcfe sass [FIRSTARG]
+```
+
+_See code: [dist/commands/sass/index.ts](https://github.com/Ethan-Hill/DCFE/blob/v2.0.1/dist/commands/sass/index.ts)_
+<!-- commandsstop -->
 * [`dcfe hello PERSON`](#dcfe-hello-person)
 * [`dcfe hello world`](#dcfe-hello-world)
 * [`dcfe help [COMMAND]`](#dcfe-help-command)
