@@ -1,5 +1,4 @@
 import {Command} from '@oclif/core'
-import * as path from 'node:path'
 
 // import createSassDir from '../../os/index'
 import createFolderStructure from '../../os/obj-dir-create'
@@ -23,7 +22,7 @@ export class sass extends Command {
          '7-utilities': {},
       }
 
-      createFolderStructure(path.dirname(__dirname), structure, (err: any) => {
+      createFolderStructure(process.cwd(), structure, (err: any) => {
          if (err) console.log(err)
          else {
             createIndexStructure(structure)

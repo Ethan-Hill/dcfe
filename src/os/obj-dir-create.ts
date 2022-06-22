@@ -20,9 +20,17 @@ const createFolderStructure = (dir: string, structure: Record<string, any>, cb: 
       delete copy[sub]
 
       fs.mkdir(pth, (err: any) => {
-         if (err) return cb(err)
+         if (err) {
+            console.log(err)
+            return cb(err)
+         }
+
          createFolderStructure(pth, subsub, (err: any) => {
-            if (err) return cb(err)
+            if (err) {
+               console.log(err)
+               return cb(err)
+            }
+
             createFolderStructure(dir, copy, cb)
          })
       })

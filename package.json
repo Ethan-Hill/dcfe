@@ -1,6 +1,6 @@
 {
   "name": "dcfe",
-  "version": "1.0.0",
+  "version": "2.0.2",
   "description": "CLI tool for generating Drummond Central Frontend Structures",
   "author": "Ethan Hill",
   "bin": {
@@ -36,6 +36,8 @@
     "shx": "^0.3.3",
     "ts-node": "^10.8.1",
     "tslib": "^2.3.1",
+    "ts-node": "^10.8.1",
+    "tslib": "^2.4.0",
     "typescript": "^4.4.3"
   },
   "oclif": {
