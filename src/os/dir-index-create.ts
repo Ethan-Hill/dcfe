@@ -11,6 +11,20 @@ const createIndexFiles = (structure: Record<string, Record<string, unknown>>) =>
             })
          }
       }
+
+      let mainContent = ''
+
+      for (const dir in structure) {
+         if (dir.includes('')) {
+            mainContent += `@import '${dir}';\n`
+         }
+      }
+
+      fs.writeFile('./_main.scss', mainContent, (err: any) => {
+         if (err) {
+            console.log(err)
+         }
+      })
    }
 }
 
