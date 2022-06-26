@@ -1,4 +1,5 @@
 import * as fs from 'node:fs'
+import chalk = require('chalk')
 
 const createIndexFiles = (structure: Record<string, Record<string, unknown>>) => {
    if (Object.keys(structure).length > 0) {
@@ -6,7 +7,7 @@ const createIndexFiles = (structure: Record<string, Record<string, unknown>>) =>
          if (dir.includes('')) {
             fs.writeFile(`./${dir}/_index.scss`, '', (err: any) => {
                if (err) {
-                  console.log(err)
+                  console.log(chalk.white.bgRed.bold('Error while creating files!'))
                }
             })
          }
@@ -22,7 +23,7 @@ const createIndexFiles = (structure: Record<string, Record<string, unknown>>) =>
 
       fs.writeFile('./_main.scss', mainContent, (err: any) => {
          if (err) {
-            console.log(err)
+            console.log(chalk.white.bgRed.bold('Error while creating files!'))
          }
       })
    }

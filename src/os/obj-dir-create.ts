@@ -1,5 +1,6 @@
 import * as fs from 'node:fs'
 import * as path from 'node:path'
+import chalk = require('chalk')
 
 const createFolderStructure = (dir: string, structure: Record<string, any>, cb: any = null) => {
    cb = (
@@ -21,14 +22,16 @@ const createFolderStructure = (dir: string, structure: Record<string, any>, cb: 
 
       fs.mkdir(pth, (err: any) => {
          if (err) {
-            console.log(err)
-            return cb(err)
+            console.log(chalk.white.bgRed.bold('Error while creating directories!'))
+
+            return
          }
 
          createFolderStructure(pth, subsub, (err: any) => {
             if (err) {
-               console.log(err)
-               return cb(err)
+               console.log(chalk.white.bgRed.bold('Error while creating directories!'))
+
+               return
             }
 
             createFolderStructure(dir, copy, cb)
