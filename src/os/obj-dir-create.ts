@@ -22,13 +22,32 @@ const createFolderStructure = (dir: string, structure: Record<string, any>, cb: 
 
       fs.mkdir(pth, (err: any) => {
          if (err) {
+            const dir: Array<string> = err.path.split('\\')
+            const trgtDir: string = dir[dir.length - 1]
+
+            if (err.code === 'EEXIST') {
+               console.log(chalk.white.bgRed.bold(`Error while creating directories, it seems ${trgtDir} already exist!`))
+               return
+            }
+
             console.log(chalk.white.bgRed.bold('Error while creating directories!'))
 
-            return
+            return cb(null)
          }
+
+         console.log(chalk.white.bgGreen.bold(`Successfully Created directory ${sub}`))
 
          createFolderStructure(pth, subsub, (err: any) => {
             if (err) {
+               const dir: Array<string> = err.path.split('\\')
+               const trgtDir: string = dir[dir.length - 1]
+
+               if (err.code === 'EEXIST') {
+                  console.log(chalk.white.bgRed.bold(`Error while creating directories, it seems ${trgtDir} already exist!`))
+
+                  return
+               }
+
                console.log(chalk.white.bgRed.bold('Error while creating directories!'))
 
                return
