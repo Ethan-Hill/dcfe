@@ -17,7 +17,16 @@ export class sass extends Command {
          '2-tools': {},
          '3-elements': {},
          '4-layouts': {},
-         '5-components': {},
+         '5-components': {
+            '1-features': {},
+            '2-buttons': {},
+            '3-text': {},
+            '4-form': {},
+            '5-controls': {},
+            '6-displays': {},
+            '7-items': {},
+            '8-master': {},
+         },
          '6-transitions': {},
          '7-utilities': {},
       }
