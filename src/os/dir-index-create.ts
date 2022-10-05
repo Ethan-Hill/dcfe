@@ -12,7 +12,18 @@ const createIndexFiles = (structure: Record<string, Record<string, unknown>>) =>
          }
       }
 
+      for (const dir in structure['5-components']) {
+         if (dir.includes('')) {
+            fs.writeFile(`./5-components/${dir}/_index.scss`, '', (err: any) => {
+               if (err) {
+                  console.log(err)
+               }
+            })
+         }
+      }
+
       let mainContent = ''
+      let secondContent = ''
 
       for (const dir in structure) {
          if (dir.includes('')) {
@@ -20,7 +31,19 @@ const createIndexFiles = (structure: Record<string, Record<string, unknown>>) =>
          }
       }
 
-      fs.writeFile('./_main.scss', mainContent, (err: any) => {
+      for (const dir in structure['5-components']) {
+         if (dir.includes('')) {
+            secondContent += `@import '${dir}';\n`
+         }
+      }
+
+      fs.writeFile('./main.scss', mainContent, (err: any) => {
+         if (err) {
+            console.log(err)
+         }
+      })
+
+      fs.writeFile('./5-components/_index.scss', secondContent, (err: any) => {
          if (err) {
             console.log(err)
          }
